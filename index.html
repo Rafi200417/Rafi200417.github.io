@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#internship">Internship</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1>Hi, I'm <span class="highlight" id="typing-name"></span></h1>
+                <h2>Aspiring AI & Full Stack Developer</h2>
+                <p>Passionate about building intelligent, efficient, and user-friendly applications using Python, Django, and modern web technologies.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="Rafi-resume.pdf" download class="btn btn-secondary">Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-image slide-in-right">
+                <div class="profile-placeholder">
+                    <img src="profile.jpg" alt="Mohammad Rafi" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about fade-in">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a graduate with a strong interest in Artificial Intelligence and Web Development. I have worked on real-world projects such as an AI-driven virtual desktop assistant, online resume builder using Django, and age/gender prediction models.</p>
+                    <p>I am seeking an entry-level role where I can apply my technical skills, learn continuously, and grow as a professional software developer.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1+</h3>
+                            <p>Year Learning</p>
+                        </div>
+                        <div class="stat">
+                            <h3>AI & Web</h3>
+                            <p>Focus Areas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-placeholder">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Professional Development" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education slide-in-right">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-content">
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-details">
+                        <h3>Bachelor of Technology</h3>
+                        <p class="education-institution">Lingayas Institute of Management and Technology</p>
+                        <p class="education-duration">2021 - 2025</p>
+                        <p class="education-description">CGPA: 7.5/10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="internship" class="internship slide-in-left">
+        <div class="container">
+            <h2 class="section-title">Internship Experience</h2>
+            <div class="internship-content">
+                <div class="internship-item">
+                    <div class="internship-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="internship-details">
+                        <h3>AI and ML Intern</h3>
+                        <p class="internship-company">International Institute of Digital Technologies</p>
+                        <p class="internship-duration">January, 2025 – April, 2025</p>
+                        <p class="internship-description">During my internship, I worked on developing an AI-based system for age and gender prediction using computer vision and machine learning. Key project included:</p>
+                        <ul class="internship-projects">
+                            <li><strong>Age and Gender Prediction System:</strong> Developed a system using OpenCV and pretrained models that predicts age and gender from facial images through computer vision techniques.</li>
+                        </ul>
+                        <p class="internship-description">This project enhanced my skills in machine learning, computer vision, and AI model integration.</p>
+                        <div class="internship-links">
+                            <a href="#projects" class="internship-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="internship-details">
+                        <h3>Full-Stack Development Intern</h3>
+                        <p class="internship-company">International Institute of Digital Technologies</p>
+                        <p class="internship-duration">May, 2024 – July, 2024</p>
+                        <p class="internship-description">During my internship, I worked on developing a web-based application using Django. Key project included:</p>
+                        <ul class="internship-projects">
+                            <li><strong>Online Resume Builder:</strong> Developed a web-based application using Django that allows users to create and download professional resumes through a user-friendly interface.</li>
+                        </ul>
+                        <p class="internship-description">This project enhanced my skills in full-stack development and web technologies.</p>
+                        <div class="internship-links">
+                            <a href="#projects" class="internship-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills slide-in-left">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">HTML, CSS, JavaScript</span>
+                        <span class="skill-item">Artificial Intelligence & Machine Learning Basics</span>
+                        <span class="skill-item">SQL / MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Git & GitHub</span>
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">OpenCV</span>
+                        <span class="skill-item">REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Focus Areas</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">AI Development</span>
+                        <span class="skill-item">Web Development</span>
+                        <span class="skill-item">Full Stack Development</span>
+                        <span class="skill-item">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Learning & Growth</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Continuous Learning</span>
+                        <span class="skill-item">Problem Solving</span>
+                        <span class="skill-item">Team Collaboration</span>
+                        <span class="skill-item">Project Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects slide-in-right">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card stagger-animation">
+                <div class="project-image ai-assistant-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Virtual Assistant" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Driven Virtual Desktop Assistant</h3>
+                        <p>A smart voice-based assistant capable of performing system operations, fetching real-time information, and automating daily tasks.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Speech Recognition</span>
+                            <span>APIs</span>
+                            <span>Automation Libraries</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Rafi200417/AI-Virtual-Desktop-Assistant" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card stagger-animation">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Online Resume Builder" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Online Resume Builder</h3>
+                        <p>A web-based application that allows users to create and download professional resumes through a simple and user-friendly interface.</p>
+                        <div class="project-tech">
+                            <span>Django</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Rafi200417/Online_Resume_Builder_Using_Django" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card stagger-animation">
+                    <div class="project-image prediction-image" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Age and Gender Prediction System</h3>
+                        <p>A computer vision system that predicts age and gender from facial images using pretrained machine learning models.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>Machine Learning</span>
+                            <span>Pretrained Models</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Rafi200417/Age-and-Gender-Prediction-System" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact scale-in">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>shaikmohammadrafi863@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>https://github.com/Rafi200417</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>https://www.linkedin.com/in/shaik-mohammad-rafi-004483283/</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:shaikmohammadrafi863@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/Rafi200417" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shaik-mohammad-rafi-004483283/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Mohammad Rafi. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#internship">Internship</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
