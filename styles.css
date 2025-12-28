@@ -135,6 +135,14 @@ body {
     width: 100%;
 }
 
+/* Disable navbar underline animation for hamburger menu (mobile) */
+@media (max-width: 768px) {
+  .nav-links a::after {
+    display: none;
+  }
+}
+
+
 .hamburger {
     display: none;
     flex-direction: column;
