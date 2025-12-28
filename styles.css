@@ -118,8 +118,6 @@ body {
     color: #3498db;
 }
 
-
-
 .hamburger {
     display: none;
     flex-direction: column;
@@ -819,6 +817,38 @@ html {
 
     .hamburger {
         display: flex;
+    }
+
+    /* Mobile menu open state */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 20px;
+        background: rgba(255,255,255,0.98);
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        gap: 1rem;
+        z-index: 1100;
+        min-width: 180px;
+    }
+
+    .nav-menu.active a {
+        color: #2c3e50;
+    }
+
+    .hamburger.open .bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open .bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
     }
 
     .hero-container,
