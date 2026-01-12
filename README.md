@@ -77,13 +77,32 @@ A computer vision system that predicts age and gender from facial images using p
 2. **Open in Browser**: Simply open `index.html` in your web browser
 3. **Customize**: Edit the content to match your personal information
 
+## SEO Optimizations
+
+This portfolio is optimized for search engines with the following features:
+- **Meta Tags**: Title, description, keywords, and author tags for better search visibility
+- **Open Graph Tags**: Optimized for social media sharing on Facebook, Twitter, and LinkedIn
+- **Sitemap**: XML sitemap for improved crawling and indexing by search engines
+- **Google Search Console**: Ready for verification and monitoring
+
+### SEO Meta Tags Added
+- Title: "Rafi - Aspiring AI & Full Stack Developer | Portfolio"
+- Description: Comprehensive overview of Rafi's skills and projects
+- Keywords: Rafi, Rafi's portfolio, professional portfolio, portfolio, AI developer, full stack developer, Python, Django, machine learning
+- Open Graph: Title, description, image, URL, and type for social media
+
+### Sitemap
+- Located at `sitemap.xml` for GitHub Pages
+- Submitted to Google Search Console for faster indexing
+
 ## File Structure
 
 ```
 portfolio-website/
-├── index.html          # Main HTML file with all sections
+├── index.html          # Main HTML file with all sections and SEO meta tags
 ├── styles.css          # CSS styles with responsive design
 ├── script.js           # JavaScript for animations and interactions
+├── sitemap.xml         # XML sitemap for search engine optimization
 ├── README.md           # Project documentation
 ├── profile.jpg         # Profile image
 └── Rafi-resume.pdf     # Resume download file
