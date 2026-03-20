@@ -1,6 +1,8 @@
 // Typing Animation
 document.addEventListener('DOMContentLoaded', function() {
     const typingElement = document.getElementById('typing-name');
+    if (!typingElement) return;
+    
     const text = 'Mohammad Rafi';
     let index = 0;
     let isTyping = false;
@@ -15,6 +17,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Typing animation observer - re-triggers when scrolling in/out
+    const typingObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!isTyping) {
+                    index = 0;
+                    typingElement.innerHTML = '';
+                    isTyping = true;
+                    setTimeout(typeWriter, 500);
+                }
+            } else {
+                isTyping = false;
+            }
+        });
+    }, { threshold: 0.5 });
+
+    typingObserver.observe(typingElement);
+
 // Scroll Animation Observer - Optimized for smooth performance
     const observerOptions = {
         threshold: 0.15,
@@ -24,12 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                if (entry.target.id === 'typing-name' && !isTyping) {
-                    index = 0;
-                    typingElement.innerHTML = '';
-                    isTyping = true;
-                    setTimeout(typeWriter, 500);
-                }
                 // Add animate class and stop observing - animation plays only once
                 entry.target.classList.add('animate');
                 observer.unobserve(entry.target);
@@ -42,9 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     animateElements.forEach(element => {
         observer.observe(element);
     });
-
-    // Observe the typing element
-    observer.observe(typingElement);
 
     // Stagger animation for project cards
     const projectCards = document.querySelectorAll('.stagger-animation');
