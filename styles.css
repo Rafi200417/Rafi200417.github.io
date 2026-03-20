@@ -963,6 +963,20 @@ body.dark-theme .stagger-animation {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    section,
+    .hero,
+    .about,
+    .education,
+    .internship,
+    .skills,
+    .projects,
+    .contact,
+    footer {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none;
+    }
+
     .nav-menu {
         display: none;
     }
