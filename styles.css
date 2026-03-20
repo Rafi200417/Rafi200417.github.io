@@ -900,24 +900,15 @@ body.dark-theme .project-card {
     background: #242424;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid transparent;
-    transition-property: transform, box-shadow, border-color;
-    transition-duration: 0.3s, 1.2s, 1.2s;
+    transition-property: transform, box-shadow;
+    transition-duration: 0.3s, 0.3s;
     transition-timing-function: ease;
-}
-
-/* Subtle glow and border reveal when scrolled into view */
-body.dark-theme .education.animate .education-item,
-body.dark-theme .internship.animate .internship-item,
-body.dark-theme .project-card.animate {
-    border-color: rgba(52, 152, 219, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(52, 152, 219, 0.08);
 }
 
 body.dark-theme .education-item:hover,
 body.dark-theme .internship-item:hover,
 body.dark-theme .project-card:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(52, 152, 219, 0.15);
-    border-color: rgba(52, 152, 219, 0.3);
 }
 
 body.dark-theme .education-details h3,
