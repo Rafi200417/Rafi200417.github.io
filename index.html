@@ -16,6 +16,9 @@
     <meta property="og:type" content="website">
     <!-- Google Search Console verification meta tag (replace with your actual verification code) -->
     <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="styles.css?v=20251227.1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -35,10 +38,15 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -87,7 +95,7 @@
                 </div>
                 <div class="about-image">
                     <div class="about-placeholder">
-                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Professional Development" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Professional Development" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -208,7 +216,7 @@
             <div class="projects-grid">
                 <div class="project-card stagger-animation">
                 <div class="project-image ai-assistant-image">
-                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Virtual Assistant" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="AI Virtual Assistant" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>AI-Driven Virtual Desktop Assistant</h3>
@@ -226,7 +234,7 @@
                 </div>
                 <div class="project-card stagger-animation">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Online Resume Builder" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Online Resume Builder" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Online Resume Builder</h3>
@@ -286,9 +294,9 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="mailto:shaikmohammadrafi863@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                        <a href="https://github.com/Rafi200417" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/shaik-mohammad-rafi-004483283/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:shaikmohammadrafi863@gmail.com" class="social-link" aria-label="Email Me"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                        <a href="https://github.com/Rafi200417" class="social-link" aria-label="My GitHub Profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/shaik-mohammad-rafi-004483283/" class="social-link" aria-label="My LinkedIn Profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <form class="contact-form">
@@ -325,7 +333,7 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
     <script src="script.js"></script>
 </body>
 </html>

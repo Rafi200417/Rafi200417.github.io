@@ -114,7 +114,26 @@ body {
     transition: color 0.3s ease;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
 .nav-menu a:hover {
+    color: #3498db;
+}
+
+.theme-toggle:hover {
     color: #3498db;
 }
 
@@ -122,6 +141,9 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .bar {
@@ -807,6 +829,131 @@ html {
     50% {
         transform: translateY(-10px);
     }
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-theme .section-title {
+    color: #f5f5f5;
+}
+
+body.dark-theme .navbar {
+    background: rgba(18, 18, 18, 0.95);
+}
+
+body.dark-theme .nav-logo,
+body.dark-theme .theme-toggle {
+    color: #f5f5f5;
+}
+
+body.dark-theme .nav-menu a {
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-menu a:hover,
+body.dark-theme .theme-toggle:hover {
+    color: #3498db;
+}
+
+body.dark-theme .hamburger .bar {
+    background: #e0e0e0;
+}
+
+body.dark-theme .about,
+body.dark-theme .education,
+body.dark-theme .projects {
+    background: #1a1a1a;
+}
+
+body.dark-theme .about-text p,
+body.dark-theme .stat p,
+body.dark-theme .education-details p,
+body.dark-theme .internship-duration,
+body.dark-theme .internship-description,
+body.dark-theme .internship-projects li,
+body.dark-theme .project-content p,
+body.dark-theme .contact-info p,
+body.dark-theme .contact-item {
+    color: #b3b3b3;
+}
+
+body.dark-theme .education-item,
+body.dark-theme .internship-item,
+body.dark-theme .project-card {
+    background: #242424;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid transparent;
+    transition-property: transform, box-shadow, border-color;
+    transition-duration: 0.3s, 1.2s, 1.2s;
+    transition-timing-function: ease;
+}
+
+/* Subtle glow and border reveal when scrolled into view */
+body.dark-theme .education.animate .education-item,
+body.dark-theme .internship.animate .internship-item,
+body.dark-theme .project-card.animate {
+    border-color: rgba(52, 152, 219, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(52, 152, 219, 0.08);
+}
+
+body.dark-theme .education-item:hover,
+body.dark-theme .internship-item:hover,
+body.dark-theme .project-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(52, 152, 219, 0.15);
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+body.dark-theme .education-details h3,
+body.dark-theme .internship-details h3,
+body.dark-theme .internship-projects strong,
+body.dark-theme .skill-category h3,
+body.dark-theme .project-content h3,
+body.dark-theme .contact-info h3 {
+    color: #f5f5f5;
+}
+
+body.dark-theme .skill-item {
+    background: #2a2a2a;
+    border-color: #333;
+    color: #3498db;
+}
+
+body.dark-theme .project-tech span {
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .social-link {
+    background: #2a2a2a;
+}
+
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+    background: #242424;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-theme .nav-menu.active {
+    background: rgba(24, 24, 24, 0.98);
+}
+
+body.dark-theme .footer {
+    background: #0f0f0f;
+}
+
+/* Smoother, slightly slower entrance for all animated elements in dark mode */
+body.dark-theme .fade-in, 
+body.dark-theme .slide-in-left, 
+body.dark-theme .slide-in-right, 
+body.dark-theme .scale-in, 
+body.dark-theme .stagger-animation {
+    transition-duration: 1.2s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Responsive Design */

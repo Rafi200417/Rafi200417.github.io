@@ -74,8 +74,10 @@ A computer vision system that predicts age and gender from facial images using p
 ## Getting Started
 
 1. **Clone or Download**: Download all files to your local machine
-2. **Open in Browser**: Simply open `index.html` in your web browser
-3. **Customize**: Edit the content to match your personal information
+2. **Open in Browser**: Open `index.html` directly in your web browser
+3. **Optional Local Server**: If you want to serve it locally, run `python -m http.server 8000` and then open `http://localhost:8000`
+4. **Important**: Do not run `python index.html` because `index.html` is an HTML file, not a Python script
+5. **Customize**: Edit the content to match your personal information
 
 ## SEO Optimizations
 

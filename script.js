@@ -203,6 +203,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             hamburger.classList.toggle('open');
             navMenu.classList.toggle('active');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
         });
 
         // Close menu when clicking a nav link
@@ -210,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -218,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!navMenu.contains(ev.target) && !hamburger.contains(ev.target)) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
 
@@ -226,7 +230,33 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     }
+});
+
+// Theme Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('i');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+        document.body.classList.toggle('dark-theme');
+        
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+    });
 });
