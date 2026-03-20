@@ -980,6 +980,7 @@ body.dark-theme .stagger-animation {
         gap: 1rem;
         z-index: 1100;
         min-width: 180px;
+        border: none;
     }
 
     .nav-menu.active a {
