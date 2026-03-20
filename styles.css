@@ -1,5 +1,6 @@
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Reset and Base Styles */
@@ -7,6 +8,21 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Remove focus/outline styles on sections to prevent border on navigation */
+section:focus,
+section:target,
+.hero:focus,
+.about:focus,
+.education:focus,
+.internship:focus,
+.skills:focus,
+.projects:focus,
+.contact:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 body {
@@ -751,11 +767,11 @@ body {
     color: #3498db;
 }
 
-/* Scroll Animation Classes */
+/* Scroll Animation Classes - Optimized for smooth performance */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in.animate {
@@ -766,7 +782,7 @@ body {
 .slide-in-left {
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-in-left.animate {
@@ -777,7 +793,7 @@ body {
 .slide-in-right {
     opacity: 0;
     transform: translateX(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-in-right.animate {
@@ -788,7 +804,7 @@ body {
 .scale-in {
     opacity: 0;
     transform: scale(0.8);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scale-in.animate {
@@ -799,7 +815,7 @@ body {
 .stagger-animation {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stagger-animation.animate {
@@ -807,14 +823,10 @@ body {
     transform: translateY(0);
 }
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Performance optimization */
+/* Performance optimization - use GPU acceleration */
 .fade-in, .slide-in-left, .slide-in-right, .scale-in, .stagger-animation {
     will-change: opacity, transform;
+    backface-visibility: hidden;
 }
 
 .fade-in.animate, .slide-in-left.animate, .slide-in-right.animate,
@@ -948,16 +960,6 @@ body.dark-theme .nav-menu.active {
 
 body.dark-theme .footer {
     background: #0f0f0f;
-}
-
-/* Smoother, slightly slower entrance for all animated elements in dark mode */
-body.dark-theme .fade-in, 
-body.dark-theme .slide-in-left, 
-body.dark-theme .slide-in-right, 
-body.dark-theme .scale-in, 
-body.dark-theme .stagger-animation {
-    transition-duration: 1.2s;
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Responsive Design */

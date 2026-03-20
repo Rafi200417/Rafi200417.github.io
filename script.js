@@ -9,35 +9,30 @@ document.addEventListener('DOMContentLoaded', function() {
         if (index < text.length && isTyping) {
             typingElement.innerHTML += text.charAt(index);
             index++;
-            setTimeout(typeWriter, 60); // Faster speed
+            setTimeout(typeWriter, 60);
         } else {
             isTyping = false;
         }
     }
 
-// Scroll Animation Observer
+// Scroll Animation Observer - Optimized for smooth performance
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -30px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 if (entry.target.id === 'typing-name' && !isTyping) {
-                    // Reset typing state
                     index = 0;
                     typingElement.innerHTML = '';
                     isTyping = true;
-                    setTimeout(typeWriter, 500); // Start typing after short delay
+                    setTimeout(typeWriter, 500);
                 }
+                // Add animate class and stop observing - animation plays only once
                 entry.target.classList.add('animate');
-            } else {
-                // Remove animate class when element leaves viewport to allow re-animation
-                entry.target.classList.remove('animate');
-                if (entry.target.id === 'typing-name') {
-                    isTyping = false; // Stop typing if out of view
-                }
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -45,16 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe elements for animation
     const animateElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
     animateElements.forEach(element => {
-        // Check if element is already in viewport on load
-        const rect = element.getBoundingClientRect();
-        const isInViewport = rect.top >= 0 && rect.left >= 0 &&
-                            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                            rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-
-        if (isInViewport) {
-            element.classList.add('animate');
-        }
-        // Always observe elements to handle scroll in/out
         observer.observe(element);
     });
 
@@ -65,16 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.stagger-animation');
     projectCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
-        // Check if card is already in viewport on load
-        const rect = card.getBoundingClientRect();
-        const isInViewport = rect.top >= 0 && rect.left >= 0 &&
-                            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                            rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-
-        if (isInViewport) {
-            setTimeout(() => card.classList.add('animate'), index * 100);
-        }
-        // Always observe cards to handle scroll in/out
         observer.observe(card);
     });
 
@@ -207,15 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.setAttribute('aria-expanded', !isExpanded);
         });
 
-        // Close menu when clicking a nav link
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-            });
-        });
-
         // Close menu when clicking outside
         document.addEventListener('click', (ev) => {
             if (!navMenu.contains(ev.target) && !hamburger.contains(ev.target)) {
@@ -234,6 +200,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Handle smooth scroll for all navigation links (including footer)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (navMenu) {
+                    navMenu.classList.remove('active');
+                }
+                if (hamburger) {
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+                
+                // Smooth scroll to section
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
 
 // Theme Toggle
