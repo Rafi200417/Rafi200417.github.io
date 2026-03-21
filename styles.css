@@ -19,7 +19,25 @@ section:target,
 .internship:focus,
 .skills:focus,
 .projects:focus,
-.contact:focus {
+.contact:focus,
+section:has(:target) {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Make sections non-focusable to prevent focus rings */
+#home, #about, #education, #internship, #skills, #projects, #contact {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove any focus ring from sections in all browsers */
+section:-webkit-focus-ring,
+section:focus-visible,
+section::-moz-focus-inner {
     outline: none !important;
     border: none !important;
     box-shadow: none !important;
@@ -974,6 +992,7 @@ body.dark-theme .footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Remove all borders, outlines and shadows from sections on mobile */
     section,
     .hero,
     .about,
@@ -982,10 +1001,27 @@ body.dark-theme .footer {
     .skills,
     .projects,
     .contact,
-    footer {
+    footer,
+    .education-item,
+    .internship-item,
+    .project-card {
         border: none !important;
         outline: none !important;
-        box-shadow: none;
+        box-shadow: none !important;
+    }
+
+    /* Also remove from dark theme elements on mobile */
+    body.dark-theme .education-item,
+    body.dark-theme .internship-item,
+    body.dark-theme .project-card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    body.dark-theme .education-item:hover,
+    body.dark-theme .internship-item:hover,
+    body.dark-theme .project-card:hover {
+        box-shadow: none !important;
     }
 
     .nav-menu {

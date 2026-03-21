@@ -37,16 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Scroll Animation Observer - Continuous smooth performance for laptop/mobile
     const observerOptions = {
-        threshold: 0.1,  // Slightly lower for quicker mobile triggers
-        rootMargin: '0px 0px -50px 0px'  // Adjusted for better mobile scroll
+        threshold: 0.05,  // Lower for mobile sensitivity
+        rootMargin: '0px 0px -20px 0px'  // Less aggressive for continuous trigger
     };
 
     let rafId;
     const observer = new IntersectionObserver(function(entries) {
-        // RAF throttle to prevent jank on fast scrolls
+        // RAF throttle - lighter for mobile
         if (rafId) cancelAnimationFrame(rafId);
         rafId = requestAnimationFrame(() => {
             entries.forEach(entry => {
+                // console.log removed - production clean
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
                 } else {
@@ -62,25 +63,13 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Stagger animation for project cards with dynamic reset
-    const projectCards = document.querySelectorAll('.stagger-animation');
-    projectCards.forEach((card, index) => {
-        const resetStagger = () => {
-            card.style.transitionDelay = `${index * 0.08}s`;  // Slightly faster stagger
-        };
-        resetStagger();
-        observer.observe(card);
-        
-        // Reset delay when re-animating (continuous)
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.target === card && entry.isIntersecting) {
-                    card.style.transitionDelay = `${index * 0.08}s`;
-                }
-            });
-        };
-        card._staggerObserver = new IntersectionObserver(observerCallback, { threshold: 0.1 });
-        card._staggerObserver.observe(card);
+    // Stagger for projects - simplified single observer
+    const allAnimateElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .stagger-animation');
+    allAnimateElements.forEach((element, index) => {
+        if (element.classList.contains('stagger-animation')) {
+            element.style.transitionDelay = `${index * 0.06}s`;
+        }
+        observer.observe(element);
     });
 
     // Contact Form Handling with EmailJS
@@ -234,12 +223,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle smooth scroll for all navigation links (including footer)
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
-                e.preventDefault();
-                
                 // Close mobile menu if open
                 if (navMenu) {
                     navMenu.classList.remove('active');
@@ -248,12 +237,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     hamburger.classList.remove('open');
                     hamburger.setAttribute('aria-expanded', 'false');
                 }
-                
+
+                // Remove focus from link to prevent focus styles
+                link.blur();
+
                 // Smooth scroll to section
                 targetSection.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
+
+                // Remove focus from section after scrolling to prevent border
+                setTimeout(() => {
+                    targetSection.blur();
+                }, 600);
             }
         });
     });
