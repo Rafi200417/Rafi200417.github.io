@@ -35,19 +35,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     typingObserver.observe(typingElement);
 
-// Scroll Animation Observer - Optimized for smooth performance
+// Scroll Animation Observer - Continuous smooth performance for laptop/mobile
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -30px 0px'
+        threshold: 0.1,  // Slightly lower for quicker mobile triggers
+        rootMargin: '0px 0px -50px 0px'  // Adjusted for better mobile scroll
     };
 
+    let rafId;
     const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add animate class and stop observing - animation plays only once
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
+        // RAF throttle to prevent jank on fast scrolls
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                } else {
+                    entry.target.classList.remove('animate');
+                }
+            });
         });
     }, observerOptions);
 
@@ -57,11 +62,25 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Stagger animation for project cards
+    // Stagger animation for project cards with dynamic reset
     const projectCards = document.querySelectorAll('.stagger-animation');
     projectCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
+        const resetStagger = () => {
+            card.style.transitionDelay = `${index * 0.08}s`;  // Slightly faster stagger
+        };
+        resetStagger();
         observer.observe(card);
+        
+        // Reset delay when re-animating (continuous)
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.target === card && entry.isIntersecting) {
+                    card.style.transitionDelay = `${index * 0.08}s`;
+                }
+            });
+        };
+        card._staggerObserver = new IntersectionObserver(observerCallback, { threshold: 0.1 });
+        card._staggerObserver.observe(card);
     });
 
     // Contact Form Handling with EmailJS
