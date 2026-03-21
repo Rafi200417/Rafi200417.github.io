@@ -35,25 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     typingObserver.observe(typingElement);
 
-// Scroll Animation Observer - Continuous smooth performance for laptop/mobile
+// Scroll Animation Observer - Optimized for smooth performance
     const observerOptions = {
-        threshold: 0.05,  // Lower for mobile sensitivity
-        rootMargin: '0px 0px -20px 0px'  // Less aggressive for continuous trigger
+        threshold: 0.15,
+        rootMargin: '0px 0px -30px 0px'
     };
 
-    let rafId;
     const observer = new IntersectionObserver(function(entries) {
-        // RAF throttle - lighter for mobile
-        if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(() => {
-            entries.forEach(entry => {
-                // console.log removed - production clean
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                } else {
-                    entry.target.classList.remove('animate');
-                }
-            });
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            } else {
+                entry.target.classList.remove('animate');
+            }
         });
     }, observerOptions);
 
@@ -63,13 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Stagger for projects - simplified single observer
-    const allAnimateElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .stagger-animation');
-    allAnimateElements.forEach((element, index) => {
-        if (element.classList.contains('stagger-animation')) {
-            element.style.transitionDelay = `${index * 0.06}s`;
-        }
-        observer.observe(element);
+    // Stagger animation for project cards
+    const projectCards = document.querySelectorAll('.stagger-animation');
+    projectCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(card);
     });
 
     // Contact Form Handling with EmailJS
