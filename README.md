@@ -1,143 +1,92 @@
-# Mohammad Rafi's Professional Portfolio
+# 🚀 Mohammad Rafi - Professional Portfolio
 
-A modern, responsive portfolio showcasing Mohammad Rafi's skills and experience as an aspiring AI & Full Stack Developer. Built with HTML, CSS, and JavaScript, this portfolio demonstrates his expertise in Python, Django, AI/ML, and web development.
+<p align="center">
+  <img src="profile.jpg" width="150" style="border-radius: 50%; border: 4px solid #3498db;">
+</p>
 
-## About Mohammad Rafi
+<h3 align="center">Aspiring AI & Full Stack Developer</h3>
 
-Mohammad Rafi is a B.Tech student at Lingayas Institute of Management and Technology (CGPA: 7.5/10) with a passion for Artificial Intelligence and Web Development. He has completed internships in AI/ML and Full-Stack Development, and has worked on real-world projects including an AI-driven virtual desktop assistant, online resume builder using Django, and age/gender prediction models.
+<p align="center">
+  A clean, modern, and fully responsive personal portfolio website showcasing my projects, skills, and experience in Artificial Intelligence, Machine Learning, and Full-Stack web development. 
+  <br>
+  <a href="https://rafi200417.github.io/"><strong>View Live Site »</strong></a>
+</p>
 
-## Features
-
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Modern UI**: Clean and professional design with smooth animations
-- **Interactive Elements**: Smooth scrolling navigation, mobile menu, and hover effects
-- **Sections Included**:
-  - Hero section with introduction and typing animation
-  - About section with personal stats and background
-  - Education details (B.Tech in Computer Science)
-  - Internship experience (AI/ML and Full-Stack Development)
-  - Skills section with technology categories
-  - Projects showcase with featured work and GitHub links
-  - Contact form and social links
-  - Footer with navigation links
-
-## Technologies Used
-
-- **Frontend**: HTML5, CSS3 (with CSS Grid and Flexbox), Vanilla JavaScript
-- **Backend Skills**: Python, Django, REST APIs, SQL/MySQL
-- **AI/ML**: OpenCV, Machine Learning, Computer Vision
-- **Tools**: Git & GitHub, VS Code
-- **Libraries**: Font Awesome icons, Google Fonts (Inter), EmailJS
-
-## Skills & Expertise
-
-### Technical Skills
-- Python, Django, HTML, CSS, JavaScript
-- Artificial Intelligence & Machine Learning Basics
-- SQL / MySQL
-
-### Tools & Technologies
-- Git & GitHub, VS Code, OpenCV, REST APIs
-
-### Focus Areas
-- AI Development, Web Development, Full Stack Development, Machine Learning
-
-## Featured Projects
-
-### 1. AI-Driven Virtual Desktop Assistant
-A smart voice-based assistant capable of performing system operations, fetching real-time information, and automating daily tasks.
-- **Technologies**: Python, Speech Recognition, APIs, Automation Libraries
-- **GitHub**: [https://github.com/Rafi200417/AI-Virtual-Desktop-Assistant](https://github.com/Rafi200417/AI-Virtual-Desktop-Assistant)
-
-### 2. Online Resume Builder
-A web-based application that allows users to create and download professional resumes through a simple and user-friendly interface.
-- **Technologies**: Django, HTML, CSS, JavaScript
-- **GitHub**: [https://github.com/Rafi200417/Online_Resume_Builder_Using_Django](https://github.com/Rafi200417/Online_Resume_Builder_Using_Django)
-
-### 3. Age and Gender Prediction System
-A computer vision system that predicts age and gender from facial images using pretrained machine learning models.
-- **Technologies**: Python, OpenCV, Machine Learning, Pretrained Models
-- **GitHub**: [https://github.com/Rafi200417/Age-and-Gender-Prediction-System](https://github.com/Rafi200417/Age-and-Gender-Prediction-System)
-
-## Internship Experience
-
-### AI and ML Intern
-**International Institute of Digital Technologies** | January 2025 – April 2025
-- Developed an AI-based system for age and gender prediction using computer vision and machine learning
-- Worked with OpenCV and pretrained models for facial image analysis
-
-### Full-Stack Development Intern
-**International Institute of Digital Technologies** | May 2024 – July 2024
-- Developed a web-based application using Django for online resume building
-- Created user-friendly interfaces for resume creation and download functionality
-
-## Getting Started
-
-1. **Clone or Download**: Download all files to your local machine
-2. **Open in Browser**: Open `index.html` directly in your web browser
-3. **Optional Local Server**: If you want to serve it locally, run `python -m http.server 8000` and then open `http://localhost:8000`
-4. **Important**: Do not run `python index.html` because `index.html` is an HTML file, not a Python script
-5. **Customize**: Edit the content to match your personal information
-
-## SEO Optimizations
-
-This portfolio is optimized for search engines with the following features:
-- **Meta Tags**: Title, description, keywords, and author tags for better search visibility
-- **Open Graph Tags**: Optimized for social media sharing on Facebook, Twitter, and LinkedIn
-- **Sitemap**: XML sitemap for improved crawling and indexing by search engines
-- **Google Search Console**: Ready for verification and monitoring
-
-### SEO Meta Tags Added
-- Title: "Rafi - Aspiring AI & Full Stack Developer | Portfolio"
-- Description: Comprehensive overview of Rafi's skills and projects
-- Keywords: Rafi, Rafi's portfolio, professional portfolio, portfolio, AI developer, full stack developer, Python, Django, machine learning
-- Open Graph: Title, description, image, URL, and type for social media
-
-### Sitemap
-- Located at `sitemap.xml` for GitHub Pages
-- Submitted to Google Search Console for faster indexing
-
-## File Structure
-
-```
-portfolio-website/
-├── index.html          # Main HTML file with all sections and SEO meta tags
-├── styles.css          # CSS styles with responsive design
-├── script.js           # JavaScript for animations and interactions
-├── sitemap.xml         # XML sitemap for search engine optimization
-├── README.md           # Project documentation
-├── profile.jpg         # Profile image
-└── Rafi-resume.pdf     # Resume download file
-```
-
-## Contact Information
-
-- **Email**: shaikmohammadrafi863@gmail.com
-- **GitHub**: [https://github.com/Rafi200417](https://github.com/Rafi200417)
-- **LinkedIn**: [https://www.linkedin.com/in/shaik-mohammad-rafi-004483283/](https://www.linkedin.com/in/shaik-mohammad-rafi-004483283/)
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Deployment
-
-This is a static website that can be deployed to any web hosting service:
-
-- **GitHub Pages**: Free hosting for static sites
-- **Netlify**: Easy deployment with continuous integration
-- **Vercel**: Fast deployment with global CDN
-- **Traditional hosting**: Upload files to any web server
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+<p align="center">
+  <a href="https://github.com/Rafi200417"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/shaik-mohammad-rafi-004483283/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:shaikmohammadrafi863@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+</p>
 
 ---
 
-**Portfolio Owner**: Mohammad Rafi
-**Last Updated**: 2026
-**Location**: India
+## 🛠️ Tech Stack & Skills
+
+### **Languages & Frameworks**
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+### **AI & Machine Learning**
+![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white)
+- **Concepts:** Artificial Intelligence, Machine Learning, Computer Vision, Pretrained Models  
+
+### **Database & Tools**
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![VSCode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+
+---
+
+## ✨ Key Features
+
+- **Fully Responsive Navigation**: Works seamlessly on mobile, tablet, and desktop with a custom hamburger menu overlay.
+- **Dynamic Scroll Animations**: Elements fade, scale, and slide into view efficiently via an Intersection Observer.
+- **Dark & Light Mode**: Integrated theme toggle that securely saves user preferences locally.
+- **Working Contact Form**: Uses EmailJS to securely forward inquiries to my personal email without needing a backend server.
+
+---
+
+## 📁 Project Highlights 
+
+### 1. 🎙️ AI-Driven Virtual Desktop Assistant
+A smart voice-based assistant capable of performing system operations, fetching real-time information, and automating daily tasks using speech recognition algorithms.  
+🔗 **[View Repository](https://github.com/Rafi200417/AI-Virtual-Desktop-Assistant)**
+
+### 2. 📄 Online Resume Builder
+A complete web-based tool built primarily with Django that allows users to quickly generate and download polished professional resumes.  
+🔗 **[View Repository](https://github.com/Rafi200417/Online_Resume_Builder_Using_Django)**
+
+### 3. 👤 Age and Gender Prediction System
+A highly intelligent computer vision system written in Python that analyzes incoming images to predict age intervals and gender via OpenCV and machine learning models.  
+🔗 **[View Repository](https://github.com/Rafi200417/Age-and-Gender-Prediction-System)**
+
+---
+
+## 💻 Local Setup & Development
+
+Want to test this website locally? It's completely static—no heavy external dependencies required!
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Rafi200417/Rafi200417.github.io.git
+   ```
+2. **Navigate into the directory:**
+   ```bash
+   cd Rafi200417.github.io
+   ```
+3. **Open the site:**
+   - Double-click `index.html` to open it directly in your web browser. 
+   - *Alternatively*, launch a local server using Python to avoid CORS issues:
+     ```bash
+     python -m http.server 8000
+     ```
+     And visit `http://localhost:8000` in your browser.
+
+---
+
+<p align="center">
+  <i>Developed with ❤️ by Mohammad Rafi.</i>
+</p>

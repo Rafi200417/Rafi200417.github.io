@@ -357,7 +357,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Mohammad Rafi. All rights reserved.</p>
+                <p>&copy; <span id="copyright-year">2026</span> Mohammad Rafi. All rights reserved.</p>
+                <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
                 <div class="footer-socials">
                     <a href="mailto:shaikmohammadrafi863@gmail.com" class="footer-social-link" aria-label="Email Me"><i
                             class="fas fa-envelope"></i></a>
