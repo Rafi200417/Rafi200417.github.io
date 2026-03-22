@@ -1026,6 +1026,14 @@ body.dark-theme .footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Prevent all horizontal shifting on mobile by converting slide-in to vertical fade */
+    .slide-in-left, .slide-in-right {
+        transform: translateY(30px) !important;
+    }
+    .slide-in-left.animate, .slide-in-right.animate {
+        transform: translateY(0) !important;
+    }
+
     /* Remove all borders, outlines and shadows from sections on mobile */
     section,
     .hero,
