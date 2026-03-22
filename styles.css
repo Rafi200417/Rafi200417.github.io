@@ -1,5 +1,4 @@
 html {
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -11,6 +10,12 @@ html {
 }
 
 /* Remove focus/outline styles on sections to prevent border on navigation */
+section, .hero, .about, .education, .internship, .skills, .projects, .contact, footer {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
 section:focus,
 section:target,
 .hero:focus,
@@ -121,7 +126,6 @@ body {
 
 .navbar.scrolled {
     padding: 0.5rem 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -191,6 +195,26 @@ body {
     background: #333;
     margin: 3px 0;
     transition: 0.3s;
+}
+
+/* Nav Overlay */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 990; /* Below navbar (1000) */
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(2px);
+    transition: all 0.3s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Hero Section */
@@ -270,9 +294,7 @@ body {
     color: #FFD700;
 }
 
-.cursor {
-    /* Static cursor, no animation */
-}
+
 
 /* About Section */
 .about {
@@ -768,21 +790,29 @@ body {
     text-align: center;
 }
 
-.footer-links {
+.footer-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
 }
 
-.footer-links a {
+.footer-social-link {
     color: #bdc3c7;
+    font-size: 1.5rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-social-link:hover {
     color: #3498db;
+    transform: translateY(-3px);
 }
 
 /* Scroll Animation Classes - Optimized for smooth performance */
@@ -864,17 +894,7 @@ body {
     transform: translateY(-8px) !important;
 }
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    .fade-in, .slide-in-left, .slide-in-right, .scale-in, .stagger-animation,
-    .fade-in.animate, .slide-in-left.animate, .slide-in-right.animate,
-    .scale-in.animate, .stagger-animation.animate {
-        transition: none !important;
-        animation: none !important;
-        transform: none !important;
-        opacity: 1 !important;
-    }
-}
+/* Reduced motion support removed to allow continuous mobile animations */
 
 /* Form Message Animation */
 @keyframes fadeIn {
@@ -1150,8 +1170,7 @@ body.dark-theme .footer {
         font-size: 1.8rem;
     }
 
-    .footer-links {
-        flex-direction: column;
+    .footer-content {
         gap: 1rem;
     }
 }

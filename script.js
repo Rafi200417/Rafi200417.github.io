@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Scroll Animation Observer - Optimized for smooth performance
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -30px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px 0px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
@@ -184,20 +184,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
+    // Create overlay element
+    const navOverlay = document.createElement('div');
+    navOverlay.classList.add('nav-overlay');
+    document.body.appendChild(navOverlay);
+
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
             hamburger.classList.toggle('open');
             navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
             hamburger.setAttribute('aria-expanded', !isExpanded);
         });
 
-        // Close menu when clicking outside
+        // Close menu when clicking outside or on overlay
         document.addEventListener('click', (ev) => {
             if (!navMenu.contains(ev.target) && !hamburger.contains(ev.target)) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('open');
+                navOverlay.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
             }
         });
@@ -207,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('open');
+                navOverlay.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
             }
         });
@@ -229,14 +237,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     hamburger.classList.remove('open');
                     hamburger.setAttribute('aria-expanded', 'false');
                 }
+                if (navOverlay) {
+                    navOverlay.classList.remove('active');
+                }
 
                 // Remove focus from link to prevent focus styles
                 link.blur();
 
-                // Smooth scroll to section
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                // Calculate precise Y position, offset by 70px for fixed navbar
+                const navbarHeight = 70;
+                const targetY = targetSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                // Smooth scroll to precise coordinate, explicitly forcing X=0
+                window.scrollTo({
+                    top: targetY,
+                    left: 0,
+                    behavior: 'smooth'
                 });
 
                 // Remove focus from section after scrolling to prevent border
